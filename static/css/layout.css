@@ -1,0 +1,35 @@
+#main-content {
+    margin-top: 150px;
+    background: rgba(0,0,0,.5);
+    padding: 1em .5em;
+}
+
+.city #main-content {
+    background: rgba(0,0,0,.8);
+}
+
+
+.character {
+    width: 48px;
+    height: 96px;
+    background-image: url(../images/sprites.png);
+    background-position-x: 0;
+    display: inline-block;
+}
+.character.warrior {
+    background-position-y: 0px;
+}
+.character.mage {
+    background-position-y: -96px;
+}
+.character.archer {
+    background-position-y: -192px;
+}
+.character.walk, .character:hover {
+    animation: walk 0.8s steps(4) infinite;
+}
+
+@keyframes walk {
+    from { background-position-x: 48px; }
+    to { background-position-x: 240px; }
+}

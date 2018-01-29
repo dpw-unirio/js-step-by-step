@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS 101 - Level 5</title>
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../static/css/main.css" />
+        <link rel="stylesheet" href="../static/css/layout.css" />
+
+        <script type="text/javascript" src="../static/js/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <div class="container" id="main-content">
+            <h1>
+                <span class="text-warning">JS</span>101 - Level 5 - Chekckpoint!
+            </h1>
+
+            <p>
+                E agora, o momento pelo qual todos esperavam...
+            </p>
+
+            <h2>Vamos salvar isso (em algum lugar, não disse onde, calma...)</h2>
+
+            <p>
+                Para salvar isso de verdade, de vez, pra sempre até o fim do mundo (ok, não é pra tanto) você precisaria
+                de um servidor rodando um backend com um banco de dados...
+            </p>
+
+            <p>
+                Mas não priemos cânico! Existem algumas formas de salvar dados no próprio navegador do usuário.
+            </p>
+
+            <p>
+                O mais conhecido são os famigerados <span class="text-warning">cookies</span>, eles estão aí desde tempos
+                imemoriais e são úteis para diversas coisas, porém, nos anos recentes, algumas soluções mais "amigáveis"
+                surgiram, que é o caso do <span class="text-warning">localStorage</span>.
+            </p>
+
+            <p>Tarefas:</p>
+
+            <ul>
+                <li>Após salvar a senha, exibir o botão de salvar.</li>
+                <li>Criar um objeto para armazenar as informações.</li>
+                <li>Criar uma função que salve esse objeto no <span class="text-warning">localStorage</span></li>
+                <ul>
+                    <li>O <span class="text-warning">localStorage</span> tem dois métodos principais: </li>
+                    <ul>
+                        <li><span class="text-info">localStorage.setItem(key, val)</span></li>
+                        <li><span class="text-info">localStorage.getItem(key)</span></li>
+                    </ul>
+                    <li>O "problema" é que ele só salva strings, mas isso é facilmente contornável usando o... <span class="text-warning">JSON</span>!</li>
+                    <li>Você pode usar o método <span class="text-info">JSON.stringify(object)</span> para codificar um objeto qualquer para json.</li>
+                </ul>
+                <li>Ao carregar a página verificar se existe um personagem salvo, se sim, preencher o formulário com suas informações.</li>
+            </ul>
+
+            <br>
+            <h2 class="text-center">Construa seu personagem</h2>
+
+            <div class="row" id="nameRow">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <input class="form-control" id="nameInput" placeholder="Qual seu nome?">
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-default">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    Seu nome é <span id="nameSpan">...</span>
+                </div>
+            </div>
+
+            <div class="row" id="ageRow" style="display: none;">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Qual sua idade?">
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-default">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    Você tem <span id="ageInput">...</span> anos!
+                </div>
+            </div>
+
+            <div class="row" id="passRow" style="display: none;">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">Sua senha:</span>
+
+                        <input class="form-control" placeholder="" type="password">
+
+                        <span class="input-group-addon">Confirme-a:</span>
+
+                        <input class="form-control" placeholder="" type="password">
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-default">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <span id="passwordNull">
+                        Insira sua senha...
+                    </span>
+
+                    <span id="passwordNoMatch" class="text-danger" style="display: none">
+                        As senhas são diferentes.
+                    </span>
+
+                    <span id="passwordOk" class="text-success" style="display: none">
+                        Perfeito, ótima senha!
+                    </span>
+                </div>
+            </div>
+
+            <div class="row" id="classRow" style="display: none;">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <select class="form-control">
+                            <option value="">Selecione sua classe</option>
+                        </select>
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-default">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <span>Escolha sua classe nobre aventureiro!</span>
+                </div>
+            </div>
+
+            <div class="row" id="saveRow" style="display: none;">
+                <div class="col-xs-12">
+                    <div class="btn btn-block btn-success" id="saveButton">Salvar!</div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
